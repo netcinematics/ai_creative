@@ -1,0 +1,59 @@
+# AI_encoder_decoder_architecture
+
+machine learning architecture
+for sequence to sequence tasks
+1. machine translation
+2. text summarization
+3. question and answering
+<hr></hr>
+how to train and serve models
+with encoder decoder
+and tensorflow poetry generation
+<hr></hr>
+sequence to sequence architecture
+prompt to output response.
+### HOW
+- two stage encode/decode.
+- same as INPUT/OUTPUT. PROMPT/RESPONSE.
+### ENCODER (input)
+each token one at a time, 
+RECURRENT_NEURAL_NETWORK ENCODER (RNN)
+- state for each token.
+- context vector combined to
+- output vector
+### DECODER (output)
+- takes a ton of data, 
+- REPRESENTATION, by current state.
+### TRAIN for comparison
+- dataset of input out put pairs,
+- corrects weights based on error between
+- neural network generation compared to data.
+### DECODER COMPARES against TRAINED DATA.
+- compute error between 
+decoder and actual translation.
+### TRAINING  (softmax layer)
+give decoder input at training time
+correct translation given
+teacher_forcing TRAINING 
+- force decoder to generate token from previous token. Pass two input sentences,
+original and one "shifted to the left"
+decoder generates probability of next word.
+1. Greedy search. probability of individual word
+2. Beam search. probability of sentence chunks - not individual words.
+## SERVING OUTPUT
+generate translation or response
+feed prompt to decoder with special token like GO.
+generate first word
+generation stage
+represented by vector
+RNN, previous state into new state
+passed to dense layer to get new probability
+take highest probability 
+to generate each word
+iteratively
+### DIFFERENCE
+RNN replaced by 
+TRANSFORMER BLOCKS
+based on ATTENTION MECHANISM
+TRANSFORMER MODELS and BERT
+- poetry in code LAB.
