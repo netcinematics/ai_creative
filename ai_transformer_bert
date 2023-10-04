@@ -1,0 +1,176 @@
+# AI_TRANSFORMER_BERT
+- Bidirectional Encoder Representation from Transformer
+- self attention mechanism
+- text classification, Q and A, NLP Inference
+- BERT is GOOGLE SEARCH
+<hr></hr>
+### LLM evolved
+- Neural Networks TEXT (2013)
+- Sequence to Sequence (2014) RNN LSTM
+  - improved performance.
+  - better translation, text classification
+(2015) - ATTENTION MECHANISMS
+  - Transformer Models, and BERT. (pre GPT3, PaLM)
+## TRANSFORMERS
+- attention is all you need.
+- words as vectors (that contains context)
+- bank in river bank or financial bank
+- new vector representation with Attention Mechanism
+# transformer in translation
+- is Encoder/Decoder with Attention Mechanism
+- parrellization PROCESS ALL TOKENS at ONCE!
+- simultaneous weight and context calculation (attention)
+- massive advantage over RNN performance, more data faster.
+# transformer model
+- built using attention mechanism
+- better performance by attention mechanism
+- encoder decoder - input output
+- decode REPRESENTATION for TASK.
+## Example TRANSFORMER - ENCODER
+- 6 encoders stacked with 6 decoders (hyper parameter).
+- identical in structure with different weights.
+- 2 SUB LAYERS
+1. SELF ATTENTION - helps find relevant words
+2. FEEDFORWARD - neural network (applied to each)
+## DECODER
+1. Also has SELF-ATTENTION
+2. And FEEDFORWARD
+3. Additional ENCODER DECODER ATTENTION LAYER
+ - helps decoder find relevant parts of sentence.
+### EMBEDDING
+- EMBEDDING VECTOR flows through each ENCODER
+1. SELF ATTENTION
+2. FEED FORWARD - neural network
+each vector flow through
+- dependencies in SELF-ATTENTION
+- no dependencies in FEED-FORWARD
+FEED-FORWARD LAYER allows PARRELLIZATION
+various paths executed in parrallel while in feed forward
+### INPUT EMBEDDING, 
+- uses QUERY, KEY, VALUE - VECTORS
+- training process computation.
+- transformer learns, in parralel.
+1. computed using weights.
+2. multiply by SOFTMAX to find focus (attention)
+3. SUM UP THE WEIGHTED VECTORS
+4. OUTPUT of SELF-ATTENTION LAYER.
+### Summary
+1. natural language sentences is embedded,
+2. multi-headed attention
+3. calculate attention using matrices
+4. concatenate matrix
+5. output matrix
+### Many Variations
+- encoder or decoder
+- BERT is popular encoder only
+## BERT (2018)
+- trained transformer model
+- powers google search
+- changed GOOGLE results!!!! More Semantic.
+- PROBABLISTIC INFERENCE MECHANISM
+- Prediction what translation should be.
+### BERT TRAINING
+- Bert base - long input, 13 tranform 110 mill params
+- Bert large -24 transformer 340 mill params
+- long inpuyt context
+- trained on 1 million steps
+- multi task objectives: both sentence and token level.
+- trained on wikipedia and bookcorpus.
+### base and large
+- original trans, 6, 512, 8
+- base 12 layers, 768 ff, 12 attention heads
+- large 24 layers, 1024 ff, 16 attention heads
+
+## TRAINED
+1. MLM Masked Language Model TASK
+- mask out word and predict masked word
+- trained to predict masked word
+- too little makes expensive
+- too much removes context.
+- recommended 15%
+2. Predict Next Sentence (NPS)
+- learn relationships
+- man went to store, to buy milk.
+### BERT classifies if sentences are similar
+BINARY CLASSIFICATION TASK.
+allows it to work at sentence level.
+### BERT EMBEDDINGS.
+to train, 1. TOKEN, 2. SEGMENT, 3. POSITOIN
+- token embedding, each token, representation,
+   word tranformed into vector representations
+  text classification, semantic similar concatenations
+  E[CLS] EMy EDog EBarks E[SEP]
+SEP - SEPARATOR (special token) split of sentence
+- segment embedding
+   1a, 2a, 3a, 4a, 1b, 2b, 3b, 4b
+   how does bert distinguish input pair
+- positoin embedding
+  E1, E2, E3, E4, E5,...
+input sequence up to 512.
+bert learns vector representation for each position.
+
+### BERT USE CASE
+sentence classification
+sentence pair classification
+q and a
+single sentence tagging TASK
+# LAB WALKTHROUGH - TRANSFORMER - BERT
+- classification pretrained BERT
+- VERTEX AI workbench / Notebook / open Jupiter lab.
+- CLASSIFY TEXT WITH BERT (notebook)
+- tensorflow hub pretrained hub
+- build own classificatoin
+- learn train bert model - by fine-tuning.
+GPU - takes time to train - bert kernel - libraries 
+for notebook. using tensorflow and tensorflow text
+gpu attached to notebook, 
+train sentiment analysis, movie review classify negative or positive. from IMDB dataset.
+## IMDB - label negative or positive
+## load pretrained bert from tensorflow
+- small bert for notebook (4 layers, 512 unit, 8 attention heads)
+- preprocessing model on tensor flow hub.
+- pass a sample text - multiple output
+1. input word ID. in sentence
+2. masking for each word
+3. sentence fixed length
+4. masks invalid words
+5. preprocessed text into model gives embeddings.
+## example CLASSIFICATION MODEL
+1. input layer - take raw text to prerocessing 
+2. converted to token ids, vert id and mask ids 
+3. passed to pretrain model.
+trainable - fine tuned pretrained model
+- updates initial weigth of pretrained model.
+- small data set - do not update weights introduce noise.
+- big data set trainable true.
+4. pass through dense layer - to get probability.
+5. probability positive or negative
+BINARY CLASSIFICATION PROBLEM.
+LOSS FUNCTION - Binary Cross ENTROPY
+ METRIC to Optimize - Binary Accuracy
+defining Optimizer: ADAM.
+### training
+start training model.fit()
+set epochs.
+### Evaluate performance
+accuracy 85% in 5 epochs.
+plot accuracy and loss - to visualize model performance
+training loss goes down and validation loss.
+model.save() exports tensor to local path, notebook instance.
+### Test sentences
+Pass tests to SAVED MODEL:
+"movie amaxing" "movie terrible"
+It will give probability predictions.
+Based on model trained.
+### export to vertex ai - to get online predictions
+signature of model - 1st layer taking input.
+### VERTEX MODEL REGISTRY
+- need google cloud storage bucket.
+- model ready to deploy on vertex for online predictions.
+- endpoint and model at that endpoint deployed (5-10mins)
+- instances object, pass text to key
+- endpoint . prediction function
+- take instance and give prediction.
+0
+GRU - stands for GATED RECURRENT UNIT.
+LSTM - long short term mermory
