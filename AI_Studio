@@ -1,0 +1,132 @@
+# AI_Generative_Studio
+- options, language tool
+- genai: ai generates content for you.
+MULTI-MODAL: 
+text, code, image, speech, video, 3D
+prompt: summary, extraction, generation, assistance.
+HOW: learns from massive amount of Foundation Model.
+trained further fine-tuned models to needs.
+<hr>
+# LANGUAGE 
+- 1 design prompt 2. create conversations 3. tune llms
+## TUNE FOUNDATION MODELS.
+VERTEX AI
+- end to end ML platform on Google Cloud
+- prototype, customize, models, low-code
+MODEL GARDEN
+- discover, interact pretrained models and foundations
+- data scientist or ml developer
+GenAI Studio
+- prompt and tuning : data scientist app developer
+- language, vision, speech
+language: design prompt for TASKS, conversations, deploy
+code generation, tune use case
+images: generate, edit
+speech: generate text from speech or speech from text.
+### LANGUAGE
+design prompt for TASKS for USE CASE, code generation,
+conversations: specify context, how model should respond.
+ tune model: better trained, deploy to endpoint for predicitons.
+test in prompt design.
+### PROMPT DESIGN
+- provide instruction (say what you want)
+1. zero-shot prompting
+ - given no additional data.
+2. one-shot prompting
+ - given a single example
+3. few-shot prompting
+ - given a small number examples.
+Structure Mode, provides CONTEXT.
+### STRUCTURE PROMPT MODE or FREEFORM
+### CONTEXT 
+specify words to use or not use.
+topics to focus on or avoid.
+or response format
+- each time send request to model.
+### Q and A
+context - background text
+example questions with correct answers
+test out prompt design with new question
+Prototype Q n A System, with Background Text.
+### BEST PRACTICES.
+1. be concise
+2. be specific and definitive
+3. one task at a time
+4. classify over generate
+5. INCLUDE EXAMPLES.
+6. No best way to Prompt Design - EXPERIMENT on what works.
+7. EXPERIMENT with what causes hallucinations, and what types
+of training, embedding, context state, changes improve model accuracy.
+Your Example Best Practice - for beginners - is horrifically flawed example, demonstrating actual bad practice. It is wrong to exclude JS, the way you did. You actually drive me away. Against the core principle, of bringing many minds together. That ai example needs to be improved - to be inclusive of JavaScript - not exclusive. It shows limited awareness of big picture. :)
+O - TEXT PROMPT DESIGN IN READING LIST.
+PROMPT GALLERY. save prompts. curated sample prompts,
+genai - works for variety of use cases.
+### many models to choose from
+- EVALUATE what models preforms best with which parameters
+### PARAMETERS
+- temperature:
+- token limit
+- Top P
+- Top K 
+Tuning to perform well on specific tasks.
+CONTROL RANDOMNESS of RESPONSES, by changing how 
+the output tokens are selected.
+## PROMPT STRUCTURE
+- send prompt to model : array of probabilities.
+example beautiful garden of
+flowers 55 trees 23 herbs 10, bugs 3.
+Probability of correctness.
+STRATEGY of RETURN:
+- select most likely word (uninteresting or repetitive)
+- random distribution - more CREATIVE responses.
+- LOW TEMPERATURE: highly possible, more predictable
+  - tasks like qna or summary
+- HIGH TEMPERATURE: low possibility or unusual.
+ - TOP K (number) random return from top (shows runner up) k=2
+ - TOP P (probability) random return from top (sum not exceed p)
+
+## 2 CONVERSATOINS
+### CONVERSATION CONTEXT of REQUEST
+- words can cannot use
+- topics canIuse - response format.
+CONTEXT EVERY TIME.
+### VERTEX API and SDK
+### 3 Tune a Large Model
+- launch a tuning job from ai studio
+### PROMPT DESIGN
+1. fast eperimentation
+2. fast customization
+3. low code knowledge
+- prompts can be tricky, small adjusments in wording.
+- not predictable - for all use cases
+- quality of responses is not consistent
+### FINE TUNING
+- take model pre-trained, make copy of learned weights,
+- retrain model on domain specific data set.
+- LLM - has unique challenge. too many weights.
+- long, expensive - training job of LLM (serve)
+### SOLUTION: parameter efficient tuning.
+- Only train subset of params.
+- existing or new. Extra embedding to prompt.
+### TUNING JOB
+GenAI Studio
+- tuning, cloudstorage 
+TRAINING DATA:
+prompt and expected output.
+- text to text problem !!!
+- thousands of examples.
+supervised training set in text to text format.
+path to data set. tuned model in vertex ai registry.
+# model tuned for text to text task.
+endpoint for serving, or test in studio
+# ANSWERS YOU GET DEPEND ON QUESTIONS YOU ASK!!!
+prompt design - 
+- best input to get best output
+- lots of experimentation.
+- temperature = randomness.
+Low temp is most probable.
+High temp is more creative.
+Tuning needs 3 things:
+1. parameters
+2. dataset
+3. objective
